@@ -17,7 +17,7 @@ paginate: true
 - Git merge
 - Team git workflows
 - Common anti-patterns
-- Useful tools 
+- Useful tools
 
 ---
 
@@ -142,7 +142,7 @@ $ git merge topic
 ---
 
 ### **Trunk**-based development
-- Whole team develops to shared branch called trunk (!!) 
+- Whole team develops to shared branch called trunk (!!)
 - Short lived feature branches
 - Release branches
 
@@ -160,7 +160,7 @@ $ git merge topic
 
 ---
 
-### **Gitflow** 
+### **Gitflow**
 - Two main branches: `develop` and `main`.
 - Features are developed by branching `develop` and are reviewed before merging.
 - Releases are merges from `develop` to `master`.

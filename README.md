@@ -1,29 +1,17 @@
-# Git Strategies. A Workshop.
+# Advanced Git Workshop
 
-## Outline
+The current slides for this workshop can be found in Google Drive.
 
-- Git rebase
-- Git merge
-- Team workflows
-  - Trunk-based development
-  - Gitflow
-- Icing: Extra git tools which I find useful
-
-## Slides
+## Old Version of Slides
 
 The slides can be found in `slides.md`. To build them I have used
-[Marp Next](https://github.com/marp-team/marp), please check their documentation
-to get you set up. I personally have simply installed their
-[VS Code extension](https://github.com/marp-team/marp-vscode),
-and that gets you going, but the [CLI](https://github.com/marp-team/marp-cli)
-works just as well.
+[Marp Next](https://github.com/marp-team/marp), please check their documentation to get you set up. I personally have simply installed their [VS Code extension](https://github.com/marp-team/marp-vscode), and that gets you going, but the [CLI](https://github.com/marp-team/marp-cli) works just as well.
 
 ### Slides Theme
 
-The theme the project uses is [haskell](https://github.com/matsubara0507/marp-themes)
-by [@matsubara0507](https://github.com/matsubara0507). 
+The theme the project uses is [haskell](https://github.com/matsubara0507/marp-themes) by [@matsubara0507](https://github.com/matsubara0507).
 
-### Compiling the slides
+### Compiling the Slides
 
 To compile the slides into a nice PDF simply run:
 
@@ -33,34 +21,29 @@ npx @marp-team/marp-cli slide-deck.md --pdf --theme theme.css
 
 ## Exercises
 
-Below you will find the different exercises which will be run through during
-the workshop.
+Below you will find the different exercises which will be run through during the workshop.
 
+### Helpful Tools
 
-### Tools to help you with the exercises
-
-#### Showing a nice commits diff between branches
+#### Showing a Nice Diff Between Branches
 
 ```bash
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative master..feature-branch
 ```
 
-*Source: [How do I see the commit differences between branches in git? [Stackoverflow]](https://stackoverflow.com/questions/13965391/how-do-i-see-the-commit-differences-between-branches-in-git)*
+* Source: [How do I see the commit differences between branches in git?](https://stackoverflow.com/questions/13965391/how-do-i-see-the-commit-differences-between-branches-in-git)
 
-
-
-#### Reset branch to whatever's in the remote
+#### Reset Branch to Remote
 
 ```bash
 git reset --hard origin/feature-branch
 ```
 
+### Git Rebase Exercise
 
-### Initial exercise
+https://github.com/8thlight/agw-rebase
 
-https://github.com/Manzanit0/agw-rebase
-
-#### Run-through
+#### Run Through
 
 1. Simple rebase + interactive rebase for squashing
 2. Interactive rebasing for doing both at the same time
@@ -69,20 +52,18 @@ https://github.com/Manzanit0/agw-rebase
 5. Rewrite commit message after having finished rebasing
 6. Now let's reset the branch and redo this with `git merge`
 
-#### Some questions
+#### Some Questions
 
 - Why did rebase not mark that one change as conflict? What's the lesson learnt here?
 - How could this whole situation have been avoided in the first place?
 - Once you've finished rebasing, would you force push the branch or create a new one? Why?
 - What's the main difference you've observed between merge and rebase? Which one makes you feel safer? Why? When would you use one or the other?
 
+### Git Merge Exercise
 
+https://github.com/8thlight/agw-merge
 
-### More in-depth exercise
-
-https://github.com/Manzanit0/agw-merge
-
-#### Some questions
+#### Some Questions
 
 - When merging `master` into `feature-branch`, which README does it keep? Why? Is it the same when we apply `rebase`?
 - Run the log after having used `merge` and after having used `rebase`. What differences can you see?
@@ -92,9 +73,6 @@ https://github.com/Manzanit0/agw-merge
 - If we `git show` the merge commit, what content is there?
   _Hint: try running `git show HEAD^...HEAD` or `git diff commit1...commit2`_
 
+## Bonus Git Bisect Exercise
 
-
-## Bonus – Git bisect
-
-Follow the instructions in: https://github.com/Manzanit0/agw-bisect
-
+Follow the instructions in https://github.com/8thlight/agw-bisect
